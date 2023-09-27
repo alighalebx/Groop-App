@@ -9,3 +9,4 @@ public interface ClubRepository extends JpaRepository<Club , Long> {
 
     Optional<Club>findByTitle(String Url);
 }
+//spring jdpc
