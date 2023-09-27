@@ -47,16 +47,14 @@ public class ClubController {
         model.addAttribute("club", club);
         return "clubs-edit";
     }
-//    @PostMapping("/clubs/{clubId}/edit")
-//    public String updateClub(@PathVariable("clubId") long clubId,
-//                             @Valid @ModelAttribute("club") ClubDto club,
-//                             BindingResult result, Model model) {
-//        if(result.hasErrors()) {
+    @PostMapping("/clubs/{clubId}/edit")
+    public String updateClub(@PathVariable("clubId") long clubId,@ModelAttribute("club") ClubDto club, Model model) {
+
 //            model.addAttribute("club", club);
 //            return "clubs-edit";
-//        }
-//        club.setId(clubId);
-//        clubService.updateClub(club);
-//        return "redirect:/clubs";
-//    }
+
+         club.setId(clubId);
+         clubService.updateClub(club);
+         return "redirect:/clubs";
+    }
 }
